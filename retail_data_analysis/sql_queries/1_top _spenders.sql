@@ -1,7 +1,5 @@
-/*
-Here we are looking to identify high-value customers (top spenders) based on purchase frequency or spending for targeted marketing
-because understanding high-value customers is a priority for marketing and customer relationship management.
-This analysis will give us a list of top spenders, their spending percentage, and sort them by the amount spent.
+/*  Which customers are the top spenders?
+    Which countries have the highest number of customers and revenue?
 */
 
 -- Query for the list of the top spenders.
@@ -11,6 +9,7 @@ FROM transactions AS t
 JOIN customers AS c ON c.customer_id = t.customer_id
 GROUP BY c.customer_id
 ORDER BY total_spent DESC;
+
 
 
 -- Query for the list of the top spenders with their spending percentage.
@@ -29,3 +28,21 @@ SELECT ct.customer_id, ct.name, ct.email, ct.total_spent, (ct.total_spent * 100.
 FROM customer_totals AS ct
 CROSS JOIN max_spent AS ms
 ORDER BY ct.total_spent DESC;
+
+
+/*
+Here we are looking to identify high-value customers (top spenders) based on purchase frequency or spending for targeted marketing
+because understanding high-value customers is a priority for marketing and customer relationship management.
+This analysis will give us a list of top spenders, their spending percentage, and sort them by the amount spent.
+*/
+
+
+--Query for the list of customers with the highest number of customers 
+
+SELECT country,
+    COUNT(customer_id) AS customer_count
+FROM customers
+GROUP BY country
+ORDER BY customer_count DESC;
+
+--USA is the country with the highet number of customers
