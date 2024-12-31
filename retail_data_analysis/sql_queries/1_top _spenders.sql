@@ -35,14 +35,3 @@ Here we are looking to identify high-value customers (top spenders) based on pur
 because understanding high-value customers is a priority for marketing and customer relationship management.
 This analysis will give us a list of top spenders, their spending percentage, and sort them by the amount spent.
 */
-
-
---Query for the list of customers with the highest number of customers 
-
-SELECT country,
-    COUNT(customer_id) AS customer_count
-FROM customers
-GROUP BY country
-ORDER BY customer_count DESC;
-
---USA is the country with the highet number of customers
