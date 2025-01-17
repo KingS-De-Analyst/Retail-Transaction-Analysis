@@ -37,6 +37,7 @@ For my deep dive into the retail transactions analysis, I harnessed the power of
 - **SQL :** The backbone of my analysis, allowing me to query the databse and unearth critical insights.
 - **PostgresSQL :** The chosen database management system, ideal for handling the retail transactions data.
 - **pgAdmin & Visual Studio Code :** My go-to for database management and query execution and analysis.
+- **Tableau :** I made use of Tableau for the visualizations of this project, so as to give
 - **Git & Github :** Essential for version control and collaboration and project tracking.
 ## The Analysis
 Each query for this project is aimed at investigating specific aspects of the retail transactions.
@@ -80,6 +81,8 @@ Here we are looking to identify high-value customers (top spenders) based on pur
 because understanding high-value customers is a priority for marketing and customer relationship management.
 This analysis gives us the list of top spenders, their spending percentage, and sort them by the amount spent.
 
+![Top Spending Customers](retail_data_analysis\sql_queries\Assets\Top Spenders.png)
+*A table showing the list of the top spending customers. I used Tableau for this analysis from my SQL query results.*
 
 ### 2. Product Trend
 I ran some analysis here to know the products that are most popular to the customers by calculating how many times they were bought anad how much we generated from them.
@@ -110,6 +113,7 @@ LIMIT 50;
 ```
 After this analysis I was able to ientify the number of transactions for the product and the total quantity sold. This reveals the top 50 selling products, where we have iphone leading the race with Huawei P following it.
 
+![Top_10]("C:\Users\KINGSLEY\Documents\Online Retail Dashboard.png")
 ### 3. Geographic Trend
 - **Query for the countries that generate the most revenue for the business**
 
@@ -150,6 +154,9 @@ GROUP BY country, state, city
 ORDER BY total_revenue DESC;
 ```
 This query gives us more insight on the performances on cities based on revenue, and giving the details of the state and coutry. This shows us that on city level 2 cities from Australia are leading.
+
+![Countries Perfomance by Revenue](retail_data_analysis\sql_queries\Assets\Country Revenue.png)
+*Pie Chart showing the information of eah country; the revenue generated from by them and the number of customers. I used Tableau for this visualization.*
 
 ### 4. Sales Trend
 - **Query on how product sales differ across countries**
@@ -193,6 +200,9 @@ ORDER BY total_revenue DESC;
 ```
 
 According to my analysis Credit Card is topping the list which indicates a seamless payment process, so it would best to ensure that this option is always available. Next to it is Debit Card which is behind Credit Card with just 4 transactions and around 11,089.499 in terms of revenue.
+
+![Impact of Feedback on Payment Method](retail_data_analysis\sql_queries\Assets\Payment Method.png)
+*This a Stacked Bar Chart showing the impact of feedback on the payment methods. Just like every other vivsualization in this project, I used Tableau for this visualization as well.*
 
 ## Business Impact
 The findngs would help optimize product offerigs, focus marketing on high-performing regions, and improve customer experience based on feedback.
